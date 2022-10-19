@@ -1,0 +1,19 @@
+{% extends 'support/base.html' %}
+
+{% block content%}
+
+<h1>{{genre}}</h1>
+
+{% for anime in animes_list %}
+<h2> {{anime}} </h2><br>
+<div class = 'anime_block'>
+  <div class = 'anime_img'> 
+    <a href = "{{anime.get_absolute_url}}">
+      <img src = "{{anime.img}}">
+    </a>
+  </div>
+  <div class = 'anime_syn'><p>{{anime.synopsis}}</p></div>
+</div>
+{% endfor %}
+
+{% endblock content %}

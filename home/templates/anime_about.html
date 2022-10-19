@@ -1,0 +1,24 @@
+{% extends 'support/base.html' %}
+
+{% block content%}
+
+<h1>{{anime}}</h1>
+<div class = overlay></div>
+    <div>
+        <img src = "{{anime.img}}">
+        <h2>Genres: 
+        {% for genre in anime.genres.all %}
+            {{genre.name}} &nbsp 
+        {% endfor %}
+         </h2>
+        <h2>Number of Episodes: {{anime.num_of_episode}}</h2>
+        <div class = "like_bar">
+        <div class = hearts1><i class = "fa-solid fa-heart"></i></div> <h2>{{anime.like}}</h2>
+        &nbsp &nbsp &nbsp
+        <div class = hearts2><i class = "fa-solid fa-heart-crack hearts"></i></div> <h2>{{anime.dislike}}</h2>
+        </div>
+    </div>
+<div class = 'syn'>
+<h2>Synopsis:</h2><p>{{anime.synopsis}}</p>
+</div>
+{% endblock content %}

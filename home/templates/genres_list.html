@@ -1,0 +1,19 @@
+{% extends 'support/base.html' %}
+
+{% block content%}
+<div class = "card_block">
+  {% for genre in genres %}
+  <div class = "card" style = "width: 14rem;">
+
+    <img src = "{{genre.img}}" class = "card-img-top" alt = "..." height = '315px'>
+
+    <div class = "card-body  bg-dark">
+      <a class = decoration href = {{genre.get_absolute_url}}>
+        <p class = "card-text" >{{genre}}</p>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class = footerFixer></div>
+{% endblock content %}

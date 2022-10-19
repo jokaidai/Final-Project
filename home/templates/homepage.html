@@ -1,0 +1,10 @@
+{% extends 'support/base.html' %}
+
+{% block content%}
+
+{% if user.is_authenticated %}
+<h1>Hi {{user}} Welcome Back !!!</h1>
+{% else %}  
+<h1>{{message}}</h1>
+{% endif %}
+{% endblock content %}
